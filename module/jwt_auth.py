@@ -2,7 +2,7 @@ import jwt
 import datetime
 from django.conf import settings
 
-def create_token(payload, timeout=1440):
+def create_token(payload, timeout=240):
     salt = settings.SECRET_KEY
     # 构造header
     headers = {

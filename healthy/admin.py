@@ -7,7 +7,7 @@ class UserAdmin(admin.ModelAdmin):
 
     list_display = ['pk', 'Open_Id', 'Nick_Name', 'User_Age', 'User_Gender', 'User_Height', 'User_Weight',
                     'User_Borntime', 'User_BMI', 'User_Bfp', 'User_Metabolism', 'User_Consume', 'User_Residualheat',
-                    'User_Contend', 'User_Target', 'isDelete']
+                    'User_Contend', 'User_Target', 'Last_Time', 'User_Sport_Time', 'User_Sport_Heat', 'isDelete']
     list_filter = ['Open_Id', 'Nick_Name', 'User_Gender']  # 过滤字段
     search_fields = ['Nick_Name']  # 搜索字段
     list_per_page = 5
@@ -37,8 +37,16 @@ class SportLike(admin.ModelAdmin):
     search_fields = ['Nick_Name']  # 搜索字段
     list_per_page = 5
 
+class Weight(admin.ModelAdmin):
+    list_display = ['pk', 'Open_Id', 'Nick_Name', 'User_Weight_One', 'User_Weight_Two', 'User_Weight_Three', 'User_Weight_Four',
+                    'User_Weight_Five', 'isDelete']
+    list_filter = ['Open_Id', 'Nick_Name']  # 过滤字段
+    search_fields = ['Nick_Name']  # 搜索字段
+    list_per_page = 5
+
 '''注册表单'''
 admin.site.register(Userinfo, UserAdmin)
 admin.site.register(Sport, Sportadmin)
 admin.site.register(Dish, DishAdmin)
 admin.site.register(UserSportLike, SportLike)
+admin.site.register(WeightInfo, Weight)

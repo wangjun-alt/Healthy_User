@@ -31,9 +31,9 @@ urlpatterns = [
     path('dish/ingestion/', views.UserIngestion.as_view()),  # 根据用户使用的食物大概计算摄入卡路里
     path('user/info/', views.UserinfoGet.as_view()),  # 获取用户信息
     path('user/change/', views.UserinfoChange.as_view()),  # 用户信息主要是体重以及身高的更改
-
-
-
+    path('user/weight/', views.UserWeight.as_view()),  # 体重计划
+    path('sport/info/', views.SportinfoGet.as_view()),  # 运动计划
+    path('user/feedback/', views.Feedback.as_view()),  # 反馈与建议
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),  # 接口文档接口
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),  # 接口文档接口
 ]
